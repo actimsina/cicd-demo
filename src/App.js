@@ -5,7 +5,7 @@ import Skills from './components/Skills';
 import Users from './components/users/Users';
 
 function App() {
-  const skills = ['plumbing', 'wiring', 'cleaning']
+  const skills = ['plumbing', 'wiring', 'cleaning', 'swimming']
   return (
     <div className="App">
       {/* <Application /> */}
