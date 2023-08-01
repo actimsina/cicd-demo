@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 export default function Users() {
@@ -5,9 +6,8 @@ export default function Users() {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then((data) => setUsers(data))
+        axios.get('https://jsonplaceholder.typicode.com/users')
+            .then((res) => setUsers(res.data))
             .catch(() => setError("Error fetching data"))
     }, [])
     return (

@@ -2,10 +2,12 @@ import { render, screen } from "@testing-library/react"
 import Users from "./Users"
 import { server } from "../../mocks/server"
 import { rest } from "msw"
+import { act } from "react-dom/test-utils"
 
 describe('Users', () => {
-    test('renders correctly', () => {
-        render(<Users />)
+    test('renders correctly', async () => {
+        // render(<Users />)
+        await act(() => render(<Users />))
         const textElem = screen.getByText(/list of users/i)
         expect(textElem).toBeInTheDocument()
     })
